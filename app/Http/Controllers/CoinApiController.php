@@ -7,9 +7,18 @@ use WisdomDiala\Cryptocap\Facades\Cryptocap;
 
 class CoinApiController extends Controller
 {
+ 
     public function coinapi()
     {  
         $datas = Cryptocap::getAssetsWithLimit(1000);
-        return view('api.coinapi', compact('datas'));
+
+        $key = env('CURRENCYLAYER_ACCESS_KEY');
+        $url = "http://apilayer.net/api/live?access_key=$key&currencies=BRL&source=USD&format=1";
+        $response = file_get_contents($url);
+        $newsData = json_decode($response);
+    
+        return view('projetos.coinapi', compact('datas', 'newsData'));
     }
+    
+    
 }
