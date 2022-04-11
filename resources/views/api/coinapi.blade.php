@@ -19,9 +19,21 @@
                     </div>
                 </div>
             </nav>
-            <div align='center'>
-                <h4 class="texto-dark"> CoinApi </h4>
+
+            <div class="projetos-header">
+                <h4 class="texto-dark"> <i class="fa fa-btc texto-gold"></i>  CoinApi <i class="fa fa-btc texto-gold"></i></h4>
+                <div>
+                    <span class="texto-dark">
+                    API para acompanhar a cotação das 1000 principais cripto-moedas do mercado.<br>
+                    <div class="projetos-header body">
+                    <small>Documentação oficial da API CoinCap: <b><a class="texto-success" href="https://docs.coincap.io/">https://docs.coincap.io/</a></b></small>
+                    <br>
+                    <small>Créditos ao Package de: <b><a class="texto-success" href="https://github.com/wisdom-diala/cryptocap-pkg"><i class="fa fa-github"></i> wisdom-diala</a></b></small>
+                    </div>
+                    </span>
+                </div>
             </div>
+            <div class="line"></div>
             <table id="tabelaCoinApi" class="table table-hover table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr class="texto-dark-small">
@@ -56,7 +68,7 @@
                         <td>{{$data->rank}}</td>
                         <td>
                             <a target="_BLANK" href="http://www.google.com/search?q=coinmarketcap+{{$data->name}}" title="Pesquisar em CoinMarketCap">
-                                <i class="fa fa-globe text-primary"></i> {{$data->name}}
+                                <i class="fa fa-globe texto-success"></i> {{$data->name}}
                             </a>
                         </td>
                         <td>{{$data->symbol}}</td>
@@ -70,7 +82,3 @@
             </table>
         </div>
 @endsection
-
-
-
-

@@ -677,3 +677,12 @@ table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
   bottom: .5em;
 }
+
+.projetos-header {
+    padding: 10px 30px 10px;
+    text-align: center;
+}
+
+.projetos-header .body{
+    text-align: left;
+}
