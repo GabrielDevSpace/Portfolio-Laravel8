@@ -91,7 +91,7 @@
                         <td>{{$data->symbol}}</td>
                         <td><span class="{{ $color }}">{{number_format($data->changePercent24Hr, 2)}}%</span></td>
                         <td>${{number_format($data->priceUsd, $casas_decimais)}}</td>
-                        <td>R${{number_format($data->priceUsd*$newsData->quotes->USDBRL, $casas_decimais)}}</td>
+                        <td>R${{number_format($data->priceUsd*$currency->quotes->USDBRL, $casas_decimais)}}</td>
                         <td>{{number_format($data->supply, 2)}}</td>
                         <td>${{number_format($data->marketCapUsd, 2)}}</td>
                     </tr>
