@@ -37,6 +37,12 @@ Route::get('/projetos', function () {
     return view('site.projetos');
 })->name('site.projetos');
 
+/*
+| CoinApi Route
+*/
+
+Route::get('/coinapi', [App\Http\Controllers\CoinApiController::class,'coinapi']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -46,3 +52,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+

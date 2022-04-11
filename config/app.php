@@ -163,6 +163,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        WisdomDiala\Cryptocap\Providers\CryptocapServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -194,6 +195,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Cryptocap' => WisdomDiala\Cryptocap\Facades\Cryptocap::class,
     ])->toArray(),
 
 ];

@@ -14,6 +14,9 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.css"/>
+    
+
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/6adde2d540.js" crossorigin="anonymous"></script>
 </head>
@@ -79,13 +82,12 @@
         
     @yield('content')
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>    
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
@@ -93,6 +95,21 @@
             });
         });
     </script>
+    <!-- Script sort by datatable do api/coinapi -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabelaCoinApi').DataTable( {
+                "language": {
+                "lengthMenu": "Mostrar _MENU_ linhas por pagina",
+                "zeroRecords": "Nothing found - sorry",
+                "info": "Exibindo Pagina _PAGE_ de _PAGES_",
+                "infoEmpty": "Sem dados para Exibir",
+                "infoFiltered": "(filtered from _MAX_ total records)"
+                }
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>  
 </body>
 
 </html>
