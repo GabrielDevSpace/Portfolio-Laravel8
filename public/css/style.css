@@ -680,3 +680,17 @@ table.dataTable thead .sorting_desc_disabled:before {
 .projetos-header {
     text-align: center;
 }
+
+
+.link-projetos:hover  {
+    background-color: rgb(239, 239, 239);
+    border-top: 5px solid #54B689;
+    transition: 0.3s;
+}
+
+.login-fa  {
+    color: #f72b2b ;
+    position:absolute;
+    top: 10px; 
+    right: 10px;
+}
