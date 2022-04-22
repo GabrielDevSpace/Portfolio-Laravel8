@@ -51,6 +51,16 @@
                     </a>
                     </div>
 
+                    <div class="col-md-3 py-2 link-projetos">
+                        <i class="fa fa-lock login-fa" title="Login Exigido!"></i>
+                        <a target="_BLANK" href="http://tasks.developerspace.com.br/">
+                        <h6 class="texto-dark"><i class="fa fa-taks text-warning"></i> New-Tasks </h6>
+                        <small class="texto-secondary">
+                        Tasks remodelado e otimizado com framework laravel, controle de demandas e tarefas de equipe.
+                        </small>                    
+                        </a>
+                    </div>
+
                     <div class="line"></div>
 
                 </div>
