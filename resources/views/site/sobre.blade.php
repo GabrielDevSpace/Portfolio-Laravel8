@@ -22,12 +22,14 @@
                 <div class="row">
                   <div class="col-sm-7">
                     <h4 class="texto-dark"><b>Gabriel Pires</b></h4>
-                    <h6 class="texto-secondary">Web Developer</h6>
+                    <h6 class="texto-secondary">Desenvolvedor Full Stack</h6>
                     <span class="texto-secondary">
                         <small>
-                            Experiência com Desenvolvimento WEB desde 2014, atuando como Idealizador, Desenvolvedor e Gestor em projetos pessoais e profissionais com as tecnologias:<i> PHP, HTML, JS, MYSQL, Firebase, PostgreSQL e outros</i>.
+                            Experiência com Desenvolvimento WEB desde 2013, atuando como Idealizador, Desenvolvedor e Gestor em projetos pessoais e profissionais com as tecnologias:<i> <b>PHP</b>, <b>Laravel</b>, <b>Tailwind</b>, <b>Bootstrap</b>, <b>HTML</b>, <b>JS</b>, <b>MYSQL</b>, <b>Firebase</b>, <b>PostgreSQL</b>, <b>Cordova</b>, <b>Xamarin</b>, <b>Java</b>, <b>Python</b>, <b>Django</b>,</i> dentre outras tecnologias.
                             <p></p>
-                            Estudando<i> Python, Django, Analise de Dados, Node.js, Versionamento GIT - Github.</i>
+                            Atualmente me aprofundando em <i><b>Java</b>, <b>Angular</b>, <b>Versionamento GIT - Github</b>.</i>
+                            <p></p>
+                            Sou um desenvolvedor com <b>perfil generalista</b>, o que me permite atuar em diferentes áreas e projetos. 
                             <p></p>
                             Estou atuando como GESTOR de T.I, porem <b class="backg-success"> <i class="texto-white"> #OPENTOWORK</i></b> na area de desenvolvimento.
                         </small>
@@ -51,38 +53,26 @@
                         <small>Minhas principais stacks de desenvolvimento.</small>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 bottom-pad">   
+                            <div class="col-md-12 bottom-pad">   
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" width="30px" />
                                 +
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain-wordmark.svg" width="30px" />
                             </div>
-                            <div class="col-md-8 bottom-pad-progress">   
-                                <div class="progress">
-                                    <div class="progress-bar backg-success" style="width:75%"><span> 75%</span></div>
-                                </div>
-                            </div>
+                       
                             
-                            <div class="col-md-4 bottom-pad">   
+                            <div class="col-md-12 bottom-pad">   
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" width="30px" />
                                 +
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg" width="30px" />
                             </div>
-                            <div class="col-md-8 bottom-pad-progress">   
-                                <div class="progress">
-                                    <div class="progress-bar backg-success" style="width:40%"><span> 40%</span></div>
-                                </div>
-                            </div>
+               
                             
-                            <div class="col-md-4 bottom-pad">   
+                            <div class="col-md-12 bottom-pad">   
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg"  width="30px" />
                                 +
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" width="30px" />
                             </div>
-                            <div class="col-md-8 bottom-pad-progress">   
-                                <div class="progress">
-                                    <div class="progress-bar backg-success" style="width:25%"><span> 25%</span></div>
-                                </div>
-                            </div>
+  
                         </div>
                     </div>
                     <div class="col-md-8">

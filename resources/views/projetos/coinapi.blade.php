@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="projetos-header">
+            <div class="projetos-header" align="center">
                 <h4 class="texto-dark"> <i class="fa fa-btc texto-gold"></i>  CoinApi <i class="fa fa-btc texto-gold"></i></h4>
                 <div>
                     <span class="texto-dark">

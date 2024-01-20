@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.css"/>
@@ -27,7 +27,7 @@
             <div class="sidebar-header">
                 <img src="{{asset('img\gp.jpg') }}" class="rounded-circle" alt="Gp" />
                 <p></p>
-                <span><small>Aloha <i class="em em-call_me_hand" aria-role="presentation" aria-label="CALL ME HAND"></i><br>Meu nome é <u>Gabriel Pires</u>, sou web developer. Bem Vindo(a) ao meu website pessoal!</small></span>
+                <span><small>Ola <i class="em em-call_me_hand" aria-role="presentation" aria-label="CALL ME HAND"></i><br>Me chamo <u>Gabriel Pires</u>, sou Desenvolvedor Full Stack. Bem Vindo(a) ao meu Portifólio!</small></span>
             </div>
             <div class="sidebar-icons">
                 <ul class="list-social">

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/clear', function () {
+   Artisan::call('cache:clear');
+   Artisan::call('route:clear');
+   return "<h1>Cache cleared successfully</h1>";
+});
+
+Route::get('/key', function () {
+   Artisan::call('key:generate');
+
+   return "<h1>Key generated successfully</h1>";
+});
+
 
 Route::get('/', function () {
     return view('site.sobre');
