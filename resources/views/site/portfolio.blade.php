@@ -61,6 +61,8 @@
                   <div class="line-small"></div>
                   <b class="texto-dark">Stack: </b>
                   Utilizado <b class="texto-success">PHP</b> para o Back, <b class="texto-success">TailwindCss</b> e <b class="texto-success">JavaScript</b> para Front, <b class="texto-success">Laravel</b> como Framework, database em <b class="texto-success">MySql</b> e hospedagem <b class="texto-success">Hostinger</b>, bem como o uso de <b class="texto-success">Prompt's</b> para <b class="texto-success">IA's</b> como <b class="texto-success">chatGPT</b> e <b class="texto-success">Bard</b>.
+                  <div class="line-small"></div>
+                  <b class="texto-dark">Link: </b><b class="texto-success"><a href="https://spacelingo.developerspace.com.br/" target="_BLANK">https://spacelingo.developerspace.com.br/</a></b>
                 </small>
               </div>
               <div class="col-md-8">
