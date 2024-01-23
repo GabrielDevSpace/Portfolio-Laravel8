@@ -25,9 +25,9 @@
                     <h6 class="texto-secondary">Desenvolvedor Full Stack</h6>
                     <span class="texto-secondary">
                         <small>
-                            Experiência com Desenvolvimento WEB desde 2013, atuando como Idealizador, Desenvolvedor e Gestor em projetos pessoais e profissionais com as tecnologias:<i> <b>PHP</b>, <b>Laravel</b>, <b>Tailwind</b>, <b>Bootstrap</b>, <b>HTML</b>, <b>JS</b>, <b>MYSQL</b>, <b>Firebase</b>, <b>PostgreSQL</b>, <b>Cordova</b>, <b>Xamarin</b>, <b>Java</b>, <b>Python</b>, <b>Django</b>,</i> dentre outras tecnologias.
+                            Experiência com Desenvolvimento WEB desde 2013, atuando como Idealizador, Desenvolvedor e Gestor em projetos pessoais e profissionais com as tecnologias:<i> <b>PHP</b>, <b>Laravel</b>, <b>Tailwind</b>, <b>Bootstrap</b>, <b>HTML</b>, <b>JS</b>, <b>MYSQL</b>, <b>PostgreSQL</b>, <b>Cordova</b>, <b>Xamarin</b>, <b>Versionamento GIT - Github</b>, </i> dentre outras tecnologias.
                             <p></p>
-                            Atualmente me aprofundando em <i><b>Java</b>, <b>Angular</b>, <b>Versionamento GIT - Github</b>.</i>
+                            Atualmente me estudando  <i><b>Java</b>, <b>Angular</b>.</i>
                             <p></p>
                             Sou um desenvolvedor com <b>perfil generalista</b>, o que me permite atuar em diferentes áreas e projetos. 
                             <p></p>
