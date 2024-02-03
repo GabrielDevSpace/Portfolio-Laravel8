@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\GenerativeAiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +27,8 @@ Route::get('/key', function () {
    return "<h1>Key generated successfully</h1>";
 });
 
-Route::get('/ai', [App\Http\Controllers\GenerativeAiController::class,'sendRequest']);
+Route::get('/openai', [GenerativeAiController::class, 'showForm'])->name('openai.form');
+Route::post('/openai', [GenerativeAiController::class, 'generateChat'])->name('openai.chat');
 
 Route::get('/', function () {
     return view('site.sobre');
