@@ -25,6 +25,7 @@ Route::get('/key', function () {
    return "<h1>Key generated successfully</h1>";
 });
 
+Route::get('/ai', [App\Http\Controllers\GenerativeAiController::class,'sendRequest']);
 
 Route::get('/', function () {
     return view('site.sobre');
@@ -33,6 +34,7 @@ Route::get('/', function () {
 Route::get('/sobre', function () {
     return view('site.sobre');
 })->name('site.sobre');
+
 
 Route::get('/experiencia', function () {
     return view('site.experiencia');
