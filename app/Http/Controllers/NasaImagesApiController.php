@@ -1,36 +1,71 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class NasaImagesApiController extends Controller
 {
     public function nasaimagesapi(Request $request)
     {
         try {
-            // URL base da API da NASA
-            $baseUrl = "https://images-api.nasa.gov/search?q=";
+            $query = $request->input('q');
+            if (!$query) {
+                throw new \Exception('Parâmetro "q" não fornecido.');
+            }
 
-            // Exemplo de consulta apenas com o parâmetro 'q' (consulta)
-            $query = "teste";
+            $baseUrl = "https://images-api.nasa.gov/search?q=" . urlencode($query);
+            if ($request->filled('center')) {
+                $baseUrl .= "&center=" . urlencode($request->input('center'));
+            }
+            if ($request->filled('keywords')) {
+                $baseUrl .= "&keywords=" . urlencode($request->input('keywords'));
+            }
+            if ($request->filled('media_type')) {
+                $baseUrl .= "&media_type=" . urlencode($request->input('media_type'));
+            }
 
-            // Montar a URL completa
-            $url = $baseUrl . urlencode($query);
+            $response = Http::get($baseUrl);
+            if (!$response->successful()) {
+                throw new \Exception('Falha ao acessar a API da NASA: ' . $response->status());
+            }
 
-            // Fazer a requisição HTTP
-            $response = Http::get($url);
-
-            // Decodificar a resposta JSON
             $results = $response->json();
+            if (!isset($results['collection']['items']) || empty($results['collection']['items'])) {
+                throw new \Exception('Nenhum resultado encontrado.');
+            }
 
-            // Retornar a view com os resultados da API (apenas para teste)
             return view('projetos.nasa-images-api', compact('results'));
-
         } catch (\Exception $e) {
-            // Tratar erros aqui, se necessário
-            dd('Erro ao acessar API da NASA: ' . $e->getMessage());
+            Log::error('Erro ao acessar API da NASA: ' . $e->getMessage());
+            return view('projetos.nasa-images-api', ['error' => $e->getMessage()]);
+        }
+    }
+
+    public function fetchVideoData(Request $request)
+    {
+        try {
+            $url = $request->input('url');
+            if (!$url) {
+                throw new \Exception('URL não fornecida.');
+            }
+
+            $response = Http::get($url);
+            if (!$response->successful()) {
+                throw new \Exception('Falha ao acessar a URL: ' . $response->status());
+            }
+
+            $data = $response->json();
+            $videoLinks = array_filter($data, function ($link) {
+                return strpos($link, 'orig.mp4') !== false;
+            });
+
+            return view('projetos.video-data', compact('videoLinks'));
+        } catch (\Exception $e) {
+            Log::error('Erro ao acessar a URL: ' . $e->getMessage());
+            return view('projetos.video-data', ['error' => $e->getMessage()]);
         }
     }
 }
+

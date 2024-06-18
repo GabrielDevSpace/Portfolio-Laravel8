@@ -65,9 +65,8 @@ Route::get('/coinapi', [App\Http\Controllers\CoinApiController::class,'coinapi']
 /*
 | NASA IMAGES API Route
 */
-Route::get('/nasa-images-api', [NasaImagesApiController::class, 'nasaimagesapi']);
-//Route::get('/nasa-images-api', [NasaImagesApiController::class, 'nasaimagesapi'])->name('nasaimages.search');
-
+Route::get('/nasa-images-api', [NasaImagesApiController::class, 'nasaimagesapi'])->name('nasaimages.search');
+Route::get('/fetch-video-data', [NasaImagesApiController::class, 'fetchVideoData'])->name('fetch.video.data');
 
 Route::middleware([
     'auth:sanctum',
