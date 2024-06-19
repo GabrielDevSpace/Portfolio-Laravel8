@@ -32,6 +32,11 @@ class NasaImagesApiController extends Controller
         if ($request->filled('keywords')) {
             $params['keywords'] = $request->input('keywords');
         }
+
+        if ($request->filled('description')) {
+            $params['description'] = $request->input('description');
+        }
+
         if ($request->filled('media_type')) {
             $params['media_type'] = $request->input('media_type');
         }
