@@ -24,9 +24,9 @@
 
         <div class="col-md-3 py-2 link-projetos">
                 <a target="_BLANK" href="{{'/nasa-images-api'}}">
-                    <h6 class="texto-dark"><i class="fa fa-star text-primary"></i>API - NASA Images</h6>
+                    <h6 class="texto-dark"><i><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="NASA Logo" style="width: 30px; height: auto;"></i>API NASA Images</h6>
                     <small class="texto-secondary">
-                        API para encontrar imagens e videos no acervo da NASA atraves da pesquisa de assuntos e topicos relacionados.
+                        API para encontrar imagens e videos no acervo da NASA, através de assuntos e topicos relacionados.
                     </small>
                 </a>
             </div>
