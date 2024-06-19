@@ -31,14 +31,17 @@
                 <input type="text" name="q" class="form-control" placeholder="Buscar por Título" value="{{ request()->input('q') }}">
             </div>
             <div class="col-md-3">
-                <input type="number" name="year_start" class="form-control" placeholder="Ano Publicado" pattern="\d{4}" title="Informe um ano válido (YYYY)" value="{{ request()->input('year_start') }}">
+                <input type="text" name="description" class="form-control" placeholder="Buscar por Descrição" value="{{ request()->input('description') }}">
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="year_start" class="form-control" placeholder="Ano Post." pattern="\d{4}" title="Informe um ano válido (YYYY)" value="{{ request()->input('year_start') }}">
             </div>
             <div class="col-md-3">
                 <input type="text" name="keywords" class="form-control" placeholder="Palavras-chave, separadas por vírgula" value="{{ request()->input('keywords') }}">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-1">
                 <select name="media_type" class="form-control">
-                    <option value="">Tipo de mídia</option>
+                    <option value="">Tipo</option>
                     <option value="image" {{ request()->input('media_type') == 'image' ? 'selected' : '' }}>Imagem</option>
                     <option value="video" {{ request()->input('media_type') == 'video' ? 'selected' : '' }}>Vídeo</option>
                     <option value="audio" {{ request()->input('media_type') == 'audio' ? 'selected' : '' }}>Áudio</option>
