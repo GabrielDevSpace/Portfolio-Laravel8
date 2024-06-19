@@ -45,6 +45,79 @@
           </li>
           <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
             <div class="timeline-arrow"></div>
+            <small class="texto-gray-small">Desenvolvido em <b>2024</b></small>
+            <p></p>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="nasa-images-min">
+                  <div class="nasa-images-min-logo">
+                    <h3 class="texto-dark"><b><img src="https://www.nasa.gov/wp-content/themes/nasa/assets/images/nasa-logo.svg" width="50px"> NASA Images</b></h3>
+                  </div>
+                </div>
+                <p></p>
+                <small>
+                  <b class="texto-dark">Objetivo: </b>
+                  API para encontrar imagens e videos no acervo da NASA, através de assuntos e topicos relacionados.
+                  <div class="line-small"></div>
+                  <b class="texto-dark">Stack: </b>
+                  Utilizado <b class="texto-success">PHP</b> para o Back, <b class="texto-success">TailwindCss</b> e <b class="texto-success">JavaScript</b> para Front, <b class="texto-success">Laravel</b> como Framework e hospedagem <b class="texto-success">Hostinger</b>.
+                  <div class="line-small"></div>
+                  <b class="texto-dark">Link: </b><b class="texto-success"><a href="https://developerspace.com.br/nasa-images-api" target="_BLANK">https://developerspace.com.br/nasa-images-api</a></b>
+                </small>
+              </div>
+              <div class="col-md-8">
+                <div id="nasa-images" class="carousel slide border-carousel" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#nasa-images" data-slide-to="0" class="active"></li>
+                    <li data-target="#nasa-images" data-slide-to="1"></li>
+                    <li data-target="#nasa-images" data-slide-to="2"></li>
+                    <li data-target="#nasa-images" data-slide-to="3"></li>
+                    <li data-target="#nasa-images" data-slide-to="4"></li>
+                    <li data-target="#nasa-images" data-slide-to="5"></li>
+                    <li data-target="#nasa-images" data-slide-to="6"></li>
+                    <li data-target="#nasa-images" data-slide-to="7"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <img class="d-block w-100" src="{{asset('img/nasa1.png')}}" alt="1 slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{asset('img/nasa2.png')}}" alt="2 slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{asset('img/nasa3.png')}}" alt="3 slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{asset('img/nasa4.png')}}" alt="4 slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{asset('img/nasa6.png')}}" alt="5 slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{asset('img/nasa7.png')}}" alt="6 slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{asset('img/nasa8.png')}}" alt="7 slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#nasa-images" role="button" data-slide="prev">
+                    <span>
+                      <i class="fa fa-chevron-circle-left texto-dark texto-h1"></i>
+                    </span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#nasa-images" role="button" data-slide="next">
+                    <span>
+                      <i class="fa fa-chevron-circle-right texto-dark texto-h1"></i>
+                    </span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+            <div class="timeline-arrow"></div>
             <small class="texto-gray-small">Desenvolvido em <b>2023</b></small>
             <p></p>
             <div class="row">
