@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\GenerativeAiController;
+use App\Http\Controllers\NasaImagesApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,12 @@ Route::get('/projetos', function () {
 */
 
 Route::get('/coinapi', [App\Http\Controllers\CoinApiController::class,'coinapi']);
+
+/*
+| NASA IMAGES API Route
+*/
+Route::get('/nasa-images-api', [NasaImagesApiController::class, 'nasaimagesapi'])->name('nasaimages.search');
+Route::get('/fetch-video-data', [NasaImagesApiController::class, 'fetchVideoData'])->name('fetch.video.data');
 
 Route::middleware([
     'auth:sanctum',

@@ -22,6 +22,15 @@
     <div class="container-fluid">
         <div class="row py-4">
 
+        <div class="col-md-3 py-2 link-projetos">
+                <a target="_BLANK" href="{{'/nasa-images-api'}}">
+                    <h6 class="texto-dark"><i><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="NASA Logo" style="width: 30px; height: auto;"></i>API NASA Images</h6>
+                    <small class="texto-secondary">
+                        API para encontrar imagens e videos no acervo da NASA, através de assuntos e topicos relacionados.
+                    </small>
+                </a>
+            </div>
+
             <div class="col-md-3 py-2 link-projetos">
                 <a target="_BLANK" href="{{'/coinapi'}}">
                     <h6 class="texto-dark"><i class="fa fa-btc texto-gold"></i> CoinAPI</h6>
@@ -30,17 +39,7 @@
                     </small>
                 </a>
             </div>
-            <!--
-                    <div class="col-md-3 py-2 link-projetos">
-                    <i class="fa fa-lock login-fa" title="Login Exigido!"></i>
-                    <a target="_BLANK" href="https://developerspace.com.br/projetos_antigos/kanban">
-                    <h6 class="texto-dark"><i class="fa fa-tasks text-warning"></i> Tasks</h6>
-                    <small class="texto-secondary">
-                    Tasks é um projeto privado para controlar minhas demandas como gestor e ter uma visão geral das atividades da minha equipe.
-                    </small>                    
-                    </a>
-                    </div>
--->
+           
             <div class="col-md-3 py-2 link-projetos">
                 <i class="fa fa-lock login-fa" title="Login Exigido!"></i>
                 <a target="_BLANK" href="https://developerspace.com.br/projetos_antigos/webtv">
