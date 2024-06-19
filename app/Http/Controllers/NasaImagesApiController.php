@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -10,23 +11,36 @@ class NasaImagesApiController extends Controller
     public function nasaimagesapi(Request $request)
     {
         try {
-            $query = $request->input('q');
-            if (!$query) {
-                throw new \Exception('Parâmetro "q" não fornecido.');
-            }
+            $baseUrl = "https://images-api.nasa.gov/search";
 
-            $baseUrl = "https://images-api.nasa.gov/search?q=" . urlencode($query);
-            if ($request->filled('center')) {
-                $baseUrl .= "&center=" . urlencode($request->input('center'));
+            // Definir o número de itens por página
+            $pageSize = 10; // Você pode ajustar conforme necessário
+
+            // Página atual
+            $page = max(1, intval($request->input('page', 1))); // Garante que 'page' seja pelo menos 1
+
+            // Montar os parâmetros da query string
+            $params = [];
+            $query = $request->input('q');
+            if ($query) {
+                $params['q'] = $query;
+            }
+            if ($request->filled('year_start')) {
+                $params['year_start'] = $request->input('year_start');
+                $params['year_end'] = $request->input('year_start');
             }
             if ($request->filled('keywords')) {
-                $baseUrl .= "&keywords=" . urlencode($request->input('keywords'));
+                $params['keywords'] = $request->input('keywords');
             }
             if ($request->filled('media_type')) {
-                $baseUrl .= "&media_type=" . urlencode($request->input('media_type'));
+                $params['media_type'] = $request->input('media_type');
             }
 
-            $response = Http::get($baseUrl);
+            // Construir a URL com os parâmetros e a paginação
+            $url = $baseUrl . '?' . http_build_query($params) . "&page_size=$pageSize&page=$page";
+
+            // Fazer a requisição para a API da NASA
+            $response = Http::get($url);
             if (!$response->successful()) {
                 throw new \Exception('Falha ao acessar a API da NASA: ' . $response->status());
             }
@@ -36,7 +50,15 @@ class NasaImagesApiController extends Controller
                 throw new \Exception('Nenhum resultado encontrado.');
             }
 
-            return view('projetos.nasa-images-api', compact('results'));
+            // Construir links de paginação
+            $pagination = [
+                'current' => $page,
+                'next' => $page + 1,
+                'prev' => $page > 1 ? $page - 1 : null,
+                'base_url' => route('nasaimages.search', array_merge($params, ['page' => '']))
+            ];
+
+            return view('projetos.nasa-images-api', compact('results', 'pagination'));
         } catch (\Exception $e) {
             Log::error('Erro ao acessar API da NASA: ' . $e->getMessage());
             return view('projetos.nasa-images-api', ['error' => $e->getMessage()]);
@@ -68,4 +90,3 @@ class NasaImagesApiController extends Controller
         }
     }
 }
-

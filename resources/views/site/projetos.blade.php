@@ -26,7 +26,7 @@
                 <a target="_BLANK" href="{{'/nasa-images-api'}}">
                     <h6 class="texto-dark"><i class="fa fa-star text-primary"></i>API - NASA Images</h6>
                     <small class="texto-secondary">
-                        API para encontrar imagens no acervo da NASA atraves da pesquisa de assuntos e topicos relacionados.
+                        API para encontrar imagens e videos no acervo da NASA atraves da pesquisa de assuntos e topicos relacionados.
                     </small>
                 </a>
             </div>
