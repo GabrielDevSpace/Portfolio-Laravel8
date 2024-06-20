@@ -25,7 +25,7 @@
             </span>
         </div>
     </div>
-    <form action="{{ route('nasaimages.search') }}" method="GET">
+    <form id="searchForm" action="{{ route('nasaimages.search') }}" method="GET">
         <div class="form-row">
             <div class="col-md-3">
                 <input type="text" name="q" class="form-control" placeholder="Buscar por Título" value="{{ request()->input('q') }}">
@@ -37,7 +37,7 @@
                 <input type="number" name="year_start" class="form-control" placeholder="Ano Post." pattern="\d{4}" title="Informe um ano válido (YYYY)" value="{{ request()->input('year_start') }}">
             </div>
             <div class="col-md-3">
-                <input type="text" name="keywords" class="form-control" placeholder="Palavras-chave, separadas por vírgula" value="{{ request()->input('keywords') }}">
+                <input type="text" id="keywordsInput" name="keywords" class="form-control" placeholder="Palavras-chave, separadas por vírgula" value="{{ request()->input('keywords') }}">
             </div>
             <div class="col-md-1">
                 <select name="media_type" class="form-control">
@@ -67,6 +67,14 @@
             /* Zoom de 5% */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             /* Aumenta a sombra ao passar o mouse */
+        }
+        
+        .keywords button {
+            margin-right: 2px;
+            margin-bottom: 2px;
+            padding: 2px 8px;
+            border-radius: 50px; /* rounded-full */
+            font-size: 12px; /* Smaller font size */
         }
     </style>
     <div class="pt-4">
@@ -110,7 +118,12 @@
                 <div class="col-md-9">
                     <h5>{{ $item['data'][0]['title'] ?? 'Sem título' }}</h5>
                     <p><small><b>Postagem: </b>{{ isset($item['data'][0]['date_created']) ? \Carbon\Carbon::parse($item['data'][0]['date_created'])->format('d/m/Y H:i:s') : 'Sem Data de Postagem' }}</small></p>
-                    <p>{{ \Illuminate\Support\Str::limit($item['data'][0]['description'] ?? 'Sem descrição', 500) }}</p>
+                    <small class="text-secondary">{{ \Illuminate\Support\Str::limit($item['data'][0]['description'] ?? 'Sem descrição', 500) }}</small>
+                    <div class="keywords pt-2">
+                        @foreach ($item['data'][0]['keywords'] as $keyword)
+                            <button class="btn btn-primary rounded-pill" onclick="searchByKeyword('{{ $keyword }}')">{{ $keyword }}</button>
+                        @endforeach
+                    </div>
                 </div>
             </div>
             @endforeach
@@ -131,4 +144,11 @@
         @endif
     </div>
 </div>
+
+<script>
+    function searchByKeyword(keyword) {
+        document.getElementById('keywordsInput').value = keyword;
+        document.getElementById('searchForm').submit();
+    }
+</script>
 @endsection
