@@ -21,11 +21,11 @@
         <div>
             <span class="texto-dark">
                 <h3>NASA Images - API</h3>
-                <p>API para encontrar imagens e videos no acervo da NASA, através de assuntos e topicos relacionados.</p>
+                <p>API para encontrar imagens e vídeos no acervo da NASA, através de assuntos e tópicos relacionados.</p>
             </span>
         </div>
     </div>
-    <form id="searchForm" action="{{ route('nasaimages.search') }}" method="GET">
+    <form id="searchForm" action="{{ route('nasaimages.search') }}" method="GET" onsubmit="return filterEmptyFields()">
         <div class="form-row">
             <div class="col-md-3">
                 <input type="text" name="q" class="form-control" placeholder="Buscar por Título" value="{{ request()->input('q') }}">
@@ -58,23 +58,19 @@
         .row.p-2 {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Sombra suave */
         }
 
-        /* Efeito de zoom e levantamento ao passar o mouse */
         .row.p-2:hover {
             transform: scale(1.0);
-            /* Zoom de 5% */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            /* Aumenta a sombra ao passar o mouse */
         }
         
         .keywords button {
             margin-right: 2px;
             margin-bottom: 2px;
             padding: 2px 8px;
-            border-radius: 50px; /* rounded-full */
-            font-size: 12px; /* Smaller font size */
+            border-radius: 50px;
+            font-size: 12px;
         }
     </style>
     <div class="pt-4">
@@ -89,7 +85,6 @@
                 <div class="col-md-3">
                     @if ($item['data'][0]['media_type'] == 'image' && isset($item['links'][0]['href']))
                     @php
-                    // Substituir '~thumb' por '~orig' no link da imagem
                     $origImageUrl = str_replace('~thumb', '~orig', $item['links'][0]['href']);
                     @endphp
                     <a href="{{ $origImageUrl }}" target="_blank" class="image-link">
@@ -100,7 +95,6 @@
                     </a>
                     @elseif ($item['data'][0]['media_type'] == 'video')
                     @php
-                    // Encontrar o link de visualização de vídeo
                     $videoLink = $item['href'];
                     @endphp
                     <a href="{{ route('fetch.video.data', ['url' => $videoLink]) }}" target="_blank" class="video-link">
@@ -120,9 +114,11 @@
                     <p><small><b>Postagem: </b>{{ isset($item['data'][0]['date_created']) ? \Carbon\Carbon::parse($item['data'][0]['date_created'])->format('d/m/Y H:i:s') : 'Sem Data de Postagem' }}</small></p>
                     <small class="text-secondary">{{ \Illuminate\Support\Str::limit($item['data'][0]['description'] ?? 'Sem descrição', 500) }}</small>
                     <div class="keywords pt-2">
-                        @foreach ($item['data'][0]['keywords'] as $keyword)
-                            <button class="btn btn-primary rounded-pill" onclick="searchByKeyword('{{ $keyword }}')">{{ $keyword }}</button>
-                        @endforeach
+                        @isset($item['data'][0]['keywords'])
+                            @foreach ($item['data'][0]['keywords'] as $keyword)
+                                <button class="btn btn-primary rounded-pill" onclick="searchByKeyword('{{ $keyword }}')">{{ $keyword }}</button>
+                            @endforeach
+                        @endisset
                     </div>
                 </div>
             </div>
@@ -149,6 +145,17 @@
     function searchByKeyword(keyword) {
         document.getElementById('keywordsInput').value = keyword;
         document.getElementById('searchForm').submit();
+    }
+
+    function filterEmptyFields() {
+        const form = document.getElementById('searchForm');
+        const inputs = form.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            if (!input.value) {
+                input.removeAttribute('name');
+            }
+        });
+        return true;
     }
 </script>
 @endsection
