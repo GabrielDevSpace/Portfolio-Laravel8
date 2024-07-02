@@ -14,16 +14,14 @@ class NasaPodController extends Controller
         $date = $request->query('date', now()->format('Y-m-d'));
         $response = Http::get($this->apiUrl, [
             'api_key' => config('services.nasa.api_key'),
+            'date' => $date,
         ]);
 
-        if ($response->failed()) {
-            abort(500, 'Erro ao recuperar os dados do APOD da NASA.');
-        }
-
         $data = $response->json();
-        
+        //dd($data);
         return view('projetos.nasa-pod', [
             'apod' => $data,
+            'date' => $date,
         ]);
     }
 
@@ -44,19 +42,23 @@ class NasaPodController extends Controller
 
         return view('projetos.nasa-pod', [
             'apod' => $data,
+            'date' => $date,
         ]);
     }
 
-    public function previousDate() {
-        $currentDate = request()->query('date', now()->format('Y-m-d'));
+    public function previousDate(Request $request)
+    {
+        $currentDate = $request->query('date', now()->format('Y-m-d'));
         $previousDate = date('Y-m-d', strtotime($currentDate . ' -1 day'));
+
         return redirect()->route('nasa-pod.index', ['date' => $previousDate]);
     }
-    
-    public function nextDate() {
-        $currentDate = request()->query('date', now()->format('Y-m-d'));
+
+    public function nextDate(Request $request)
+    {
+        $currentDate = $request->query('date', now()->format('Y-m-d'));
         $nextDate = date('Y-m-d', strtotime($currentDate . ' +1 day'));
+
         return redirect()->route('nasa-pod.index', ['date' => $nextDate]);
     }
-    
 }

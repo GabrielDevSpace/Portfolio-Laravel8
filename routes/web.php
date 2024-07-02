@@ -72,8 +72,8 @@ Route::get('/fetch-video-data', [NasaImagesApiController::class, 'fetchVideoData
 | NASA POD API Route
 */
 Route::get('/nasa-pod', [NasaPodController::class, 'index'])->name('nasa-pod.index');
-Route::get('/nasa-pod/previous', [NasaPodController::class, 'previousDate'])->name('nasa-pod.previous');
-Route::get('/nasa-pod/next', [NasaPodController::class, 'nextDate'])->name('nasa-pod.next');
+Route::get('/nasa-pod/previous', [NasaPodController::class, 'previousDate'])->name('nasa-pod.previousDate');
+Route::get('/nasa-pod/next', [NasaPodController::class, 'nextDate'])->name('nasa-pod.nextDate');
 
 
 Route::middleware([
