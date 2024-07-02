@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\GenerativeAiController;
 use App\Http\Controllers\NasaImagesApiController;
-
+use App\Http\Controllers\NasaPodController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,6 +67,14 @@ Route::get('/coinapi', [App\Http\Controllers\CoinApiController::class,'coinapi']
 */
 Route::get('/nasa-images-api', [NasaImagesApiController::class, 'nasaimagesapi'])->name('nasaimages.search');
 Route::get('/fetch-video-data', [NasaImagesApiController::class, 'fetchVideoData'])->name('fetch.video.data');
+
+/*
+| NASA POD API Route
+*/
+Route::get('/nasa-pod', [NasaPodController::class, 'index'])->name('nasa-pod.index');
+Route::get('/nasa-pod/previous', [NasaPodController::class, 'previousDate'])->name('nasa-pod.previousDate');
+Route::get('/nasa-pod/next', [NasaPodController::class, 'nextDate'])->name('nasa-pod.nextDate');
+
 
 Route::middleware([
     'auth:sanctum',

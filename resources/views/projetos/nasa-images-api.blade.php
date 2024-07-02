@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="content">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-1">
         <div class="container-fluid">
             <button type="button" id="sidebarCollapse" class="btn backg-success">
                 <i class="fas fa-align-left"></i>
@@ -20,8 +20,8 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="NASA Logo" style="width: 100px; height: auto;">
         <div>
             <span class="texto-dark">
-                <h3>NASA Images - API</h3>
-                <p>API para encontrar imagens e vídeos no acervo da NASA, através de assuntos e tópicos relacionados.</p>
+                <h4>NASA Images - API</h4>
+                <p style="font-size: 14px; color:dimgrey">API para acessar imagens e vídeos do acervo da NASA, relacionados a diversos assuntos e tópicos.</p>
             </span>
         </div>
     </div>

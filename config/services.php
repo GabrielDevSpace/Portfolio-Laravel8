@@ -28,11 +28,16 @@ return [
     'openai' => [
         'api_key' => env('OPENAI_API_KEY'),
     ],
-    
+
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+
+    'nasa' => [
+        'api_key' => env('NASA_API_KEY'),
+    ],
+
 
 ];
